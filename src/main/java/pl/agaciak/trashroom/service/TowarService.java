@@ -21,8 +21,7 @@ private final TowarRepository towarRepository;
 
     public List<Towar> getTowarlist() {
         List<Towar> allTowary = towarRepository.findAll();
-        List<Towar> Towarlist = new ArrayList<>();
 
-        return Towarlist;
+        return allTowary;
     }
 }
