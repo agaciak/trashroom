@@ -1,14 +1,16 @@
 package pl.agaciak.trashroom.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Towar {
+
 
     @Id
     @GeneratedValue(generator = "towarseq")
@@ -19,7 +21,10 @@ public class Towar {
     private Integer quantity;
     private LocalDate timeUse;
     private String nameDistributor;
-    private Long statistics;
+
+
+    @ManyToMany
+    private Set<Dostawa> dostawy = new HashSet<>();
 
     public Towar() {
     }
@@ -65,19 +70,32 @@ public class Towar {
         this.nameDistributor = nameDistributor;
     }
 
-    public Long getStatistics() {
-        return statistics;
-    }
 
-    public void setStatistics(Long statistics) {
-        this.statistics = statistics;
-    }
 
-    public Towar(String nameProduct, Integer quantity, LocalDate timeUse, String nameDistributor, Long statistics) {
+
+
+    public Towar(String nameProduct, Integer quantity, LocalDate timeUse, String nameDistributor) {
         this.nameProduct = nameProduct;
         this.quantity = quantity;
         this.timeUse = timeUse;
         this.nameDistributor = nameDistributor;
-        this.statistics = statistics;
+
+    }
+
+
+    public Towar(String nameProduct, Integer quantity, LocalDate timeUse, String nameDistributor, Set<Dostawa> dostawy) {
+        this.nameProduct = nameProduct;
+        this.quantity = quantity;
+        this.timeUse = timeUse;
+        this.nameDistributor = nameDistributor;
+        this.dostawy = dostawy;
+    }
+
+    public Set<Dostawa> getDostawy() {
+        return dostawy;
+    }
+
+    public void setDostawy(Set<Dostawa> dostawy) {
+        this.dostawy = dostawy;
     }
 }
