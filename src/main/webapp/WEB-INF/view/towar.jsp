@@ -10,14 +10,13 @@
 
 
     <br>
-    <form action="?" method="get">                  <!- miejsce wyszukiwania towaru ->
+    <form action="?" method="get"> <!- miejsce wyszukiwania towaru ->
         Wpisz nazwę towaru: <input type="text" name="name">
         <input type="submit" value="wyszukaj"><br>
 
     </form>
-    <form action="/przyjecie.jsp" method="get">                  <!- dodawanie towaru do listy magazynowej ->
-
-        <input type="submit" value="Dodaj Towar"><br>
+    <form action=${pageContext.request.contextPath}"/przyjecie.jsp" method="post"> <!- dodawanie towaru do listy magazynowej ->
+        <input type="submit" value="Dodaj lub pobierz Towar"><br>
 
     </form>
     <br>
