@@ -7,18 +7,11 @@
 
 <h2>test
     <br>
-
-
     <br>
-    <form action="?" method="get"> <!- miejsce wyszukiwania towaru ->
-        Wpisz nazwę towaru: <input type="text" name="name">
-        <input type="submit" value="wyszukaj"><br>
 
-    </form>
-    <form action=${pageContext.request.contextPath}"/przyjecie.jsp" method="post"> <!- dodawanie towaru do listy magazynowej ->
-        <input type="submit" value="Dodaj lub pobierz Towar"><br>
+    <a href="/przyjecie">Dodaj lub pobierz Towar</a>
 
-    </form>
+
     <br>
     <br>
     <c:forEach var="towar" items="${towary}"> <!- To odpowiada za wyświetlanie listy towarów ->

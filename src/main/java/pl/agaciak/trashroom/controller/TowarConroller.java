@@ -32,7 +32,7 @@ public class TowarConroller {
 
     @GetMapping("/przyjecie")
     public ModelAndView addTowar() {
-        ModelAndView modelAndView = new ModelAndView("addTowar");
+        ModelAndView modelAndView = new ModelAndView("przyjecie");
         modelAndView.addObject("towar", new Towar());
         return modelAndView;
     }

@@ -21,7 +21,7 @@ public class Towar {
     private Integer quantity;
     private LocalDate timeUse;
     private String nameDistributor;
-
+    private Integer limitToDo;
 
     @ManyToMany
     private Set<Dostawa> dostawy = new HashSet<>();
@@ -71,8 +71,17 @@ public class Towar {
     }
 
 
+    public Integer getLimitToDo() {
+        return limitToDo;
+    }
 
+    public void setLimitToDo(Integer limitToDo) {
+        this.limitToDo = limitToDo;
+    }
 
+    public Towar(Integer limitToDo) {
+        this.limitToDo = limitToDo;
+    }
 
     public Towar(String nameProduct, Integer quantity, LocalDate timeUse, String nameDistributor) {
         this.nameProduct = nameProduct;
