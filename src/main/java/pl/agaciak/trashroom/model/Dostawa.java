@@ -2,6 +2,7 @@ package pl.agaciak.trashroom.model;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.HashSet;
@@ -43,8 +44,10 @@ public class Dostawa {
     }
 
     @Id
+    @GeneratedValue
     private Long id;
     private String nameProduct;
+
 
     @ManyToMany
     private Set<Towar> towary = new HashSet<>();
